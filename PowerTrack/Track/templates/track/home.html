@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Device List</h1>
+
+    {% if devices %}
+        <div class="device-list">
+            {% for device in devices %}
+                <a href="{% url 'device_details' device.slug %}" class="device-card">
+                    <div class="device-info">
+                        <div class="device-name">{{ device.name }}</div>
+                        <div class="device-location">{{ device.location }}</div>
+                    </div>
+                    <div class="device-date">{{ device.jalali_created_at|slice:":10"  }}</div>
+                    <button class="details-button">جزئیات بیشتر</button>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>شما هیچ دستگاهی ندارید.</p>
+    {% endif %}
+{% endblock %}

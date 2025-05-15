@@ -1,0 +1,37 @@
+{% load static %}
+<header class="glassmorphism-header">
+    <div class="header-container">
+        <div class="header-buttons">
+            <span class="welcome-message">
+                <i class="fas fa-smile"></i> Welcome, {{ user.username }}
+            </span>
+
+
+            <form action="{% url 'logout' %}" method="post" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </button>
+            </form>
+        </div>
+
+        <div class="search-bar">
+            <form method="GET" action="{% url 'search' %}">  <!-- باید view و url مربوط به جستجو را ایجاد کنید -->
+                {% csrf_token %}
+                <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        
+
+        <div class="header-right">
+
+            <a href="{% url 'home' %}" class="home-button"><i class="fas fa-home"></i> Home</a>
+
+
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+        </div>
+    </div>
+</header>

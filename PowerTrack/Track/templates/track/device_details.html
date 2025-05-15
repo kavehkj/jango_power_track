@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Device Details{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'device_detail.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="device-details-container">
+    <!-- دستگاه - مشخصات -->
+    <div class="device-info-section">
+        <!-- عنوان بخش -->
+        <h2 class="section-title"><i class="fas fa-cogs"></i> Device Info</h2>
+        <!-- ردیف اول و دوم اطلاعات -->
+        <div class="info-row">
+            <div class="info-mini">
+                <i class="fas fa-tag"></i>
+                <strong>Name:</strong> {{ device.name }}
+            </div>
+            <div class="info-mini">
+                <i class="fas fa-id-card"></i>
+                <strong>Device ID:</strong> {{ device.id }}
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-mini">
+                <i class="fas fa-map-marker-alt"></i>
+                <strong>Location:</strong> {{ device.location }}
+            </div>
+            <div class="info-mini">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Created At:</strong> {{ device.jalali_created_at|slice:":10" }}
+            </div>
+        </div>
+
+        <!-- عنوان بخش Latest Data -->
+        <h2 class="section-title"><i class="fas fa-chart-line"></i> Latest Data</h2>
+        <!-- ردیف اول و دوم داده‌ها -->
+        <div class="data-row">
+            <div class="data-box">
+                <h4><i class="fas fa-bolt"></i> Voltage</h4>
+                <p>{{ latest_device_data.voltage }} V</p>
+            </div>
+            <div class="data-box">
+                <h4><i class="fas fa-plug"></i> Current</h4>
+                <p>{{ latest_device_data.current }} A</p>
+            </div>
+        </div>
+
+        <div class="data-row">
+            <div class="data-box">
+                <h4><i class="fas fa-thermometer-half"></i> Temperature</h4>
+                <p>{{ latest_device_data.temperature }} °C</p>
+            </div>
+            <div class="data-box status-box-{{ status }}">
+                <h4><i class="fas fa-info-circle"></i> Status</h4>
+                <p class="status-{{ status|upper }}">{{ status|upper }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- نمودار -->
+    <div class="graph-section" style="margin-top: 40px;">
+        <h3><i class="fas fa-chart-bar"></i> Device Data Graph</h3>
+        {% include "track/chart.html" %}
+    </div>
+</div>
+{% endblock %}

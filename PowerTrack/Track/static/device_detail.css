@@ -1,0 +1,150 @@
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f4f7;
+        margin: 0;
+        padding: 0;
+    }
+
+    .device-details-container {
+        max-width: 1300px;
+        margin: auto;
+        padding: 20px 10px;
+    }
+
+    /* دستگاه - مشخصات */
+    .device-info-section {
+        background-image: url('/static/back.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 30px;
+        border-radius: 15px;
+        color: white;
+        min-height: 850px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* عنوان هر بخش */
+    .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: rgb(0, 0, 0);
+        text-align: left;
+    }
+
+    /* هر ردیف از اطلاعات */
+    .info-row {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* هر بخش از اطلاعات */
+    .info-mini {
+        background-color: rgba(0, 0, 0, 0.55);
+        padding: 12px 20px;
+        border-radius: 10px;
+        color: white;
+        flex: 1;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+        max-width: 300px;
+        text-align: left;
+    }
+
+    /* ردیف و باکس‌های داده‌ها */
+    .data-row {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .data-box {
+        background-color: rgba(0, 0, 0, 0.45);
+        flex: 1 1 calc(50% - 15px);
+        max-width: 300px;
+        padding: 18px;
+        border-radius: 10px;
+        text-align: left;
+        color: #fff;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+    }
+
+    .data-box:hover {
+        transform: translateY(-4px);
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .status-box-OK {
+        border: 2px solid #00ffae;
+    }
+
+    .status-box-WARNING {
+        border: 2px solid #ffc107;
+    }
+
+    .status-box-ERROR {
+        border: 2px solid #ff4c4c;
+    }
+
+    .status-OK {
+        color: #00ffae;
+        font-weight: bold;
+    }
+
+    .status-WARNING {
+        color: #ffc107;
+        font-weight: bold;
+    }
+
+    .status-ERROR {
+        color: #ff4c4c;
+        font-weight: bold;
+    }
+
+    /* سکشن گراف */
+    .graph-section {
+        background-color:#333;
+        ;
+        padding: 25px;
+        margin-top: 35px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .graph-section h3 {
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    /* ریسپانسیو (برای صفحه‌های کوچکتر) */
+    @media (max-width: 768px) {
+        .info-row {
+            flex-direction: column;
+        }
+
+        .data-row {
+            flex-direction: column;
+        }
+
+        .data-box {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        .info-mini {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+    }

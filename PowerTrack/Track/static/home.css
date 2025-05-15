@@ -1,0 +1,173 @@
+/* استایل‌های لیست دستگاه‌ها */
+.device-list {
+    width: 85%; /* 80% عرض صفحه */
+    margin: 20px auto; /* برای居中 کردن کادر */
+    padding: 20px;
+}
+
+.device-card {
+    background:  rgba(255, 255, 255, 0.25); /* گرادیانت شیشه‌ای */
+    backdrop-filter: blur(12px); /* افکت محو بیشتر برای شیشه‌ای بودن */
+    border-radius: 16px; /* گرد کردن بیشتر */
+    padding: 16px; /* پدینگ بیشتر */
+    margin-bottom: 20px; /* فاصله بیشتر */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 12px 50px 0 rgba(31, 38, 135, 0.55);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حاشیه نازک برای جلوه شیشه‌ای */
+}
+
+.device-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        8px 8px 20px rgba(0, 0, 0, 0.3),
+        -8px -8px 20px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)); /* تغییر گرادیانت هنگام هاور */
+}
+
+.device-info {
+    flex: 1;
+}
+
+.device-name {
+    font-size: 24px; /* بزرگ‌تر شدن فونت نام دستگاه */
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #fff; /* رنگ سفید برای متن */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* سایه متن */
+}
+
+.device-location {
+    font-size: 16px;
+    color: #ff9800; /* رنگ نارنجی زیبا برای موقعیت */
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 1px; /* فاصله بین حروف */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* سایه متن */
+}
+
+.device-date {
+    font-size: 14px;
+    color: #ccc;
+    margin-right:140px; /* فاصله مناسب از تاریخ */
+    display: inline-block; /* برای اینکه تاریخ کنار دکمه قرار بگیرد */
+    margin-top: 5px; /* برای اینکه تاریخ از دکمه کمی پایین‌تر باشد */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* سایه متن */
+}
+
+/* استایل دکمه جزئیات بیشتر */
+.details-button {
+    background: linear-gradient(135deg, #7c4dff, #00bcd4);
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.2),
+        -4px -4px 8px rgba(255, 255, 255, 0.1);
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* فاصله بین آیکون و متن */
+}
+
+.details-button:hover {
+    background: linear-gradient(135deg, #00bcd4, #7c4dff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* آیکون برای دکمه */
+.details-button i {
+    font-size: 18px; /* اندازه آیکون */
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px; 
+    color: #fff; 
+    font-weight: bold;
+    margin-bottom: 24px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    margin-top: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* سایه متن */
+}
+
+/* انیمیشن برای ظاهر شدن لیست */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.device-list {
+    animation: fadeIn 0.8s ease-out; /* اعمال انیمیشن */
+}
+
+
+
+p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 70%;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.2),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  p:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 
+      0 12px 40px 0 rgba(31, 38, 135, 0.3),
+      inset 0 2px 6px rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+  
+  /* برای عناصر p داخل کارت‌ها (اگر نیاز دارید) */
+  .device-card p {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    text-align: left;
+    max-width: 100%;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .device-card p:hover {
+    transform: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+  }
